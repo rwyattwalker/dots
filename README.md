@@ -6,7 +6,7 @@
     <h3>Screenshots</h3>
 </div>
 
-![](/screenshots/desktop.png)
+![](/screenshots/Desktop.png)
 
 <a name="details"></a>
 ## Details ##
