@@ -32,7 +32,6 @@ network_interfaces = {
 -- List of apps to run on start-up
 local run_on_start_up = {
    "picom --experimental-backends --config ~/.config/awesome/configuration/picom.conf",
-   "redshift",
    "unclutter"
 }
 --Import Exit Screen
