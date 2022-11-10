@@ -54,7 +54,7 @@
 1. Ensure all dependencies and desired recommended dependencies are met
 2. Clone this repository and place the alacritty, awesome, nvim, and spicetify directories into your `.config` folder
 3. Replace your ~/.p10k.zsh file with the one from this repo.
-4. CD into your ~/.config/awesome directory and run this command: ``` git clone https://github.com/streetturtle/awesome-wm-widgets ```
+4. CD into your ~/.config/awesome directory and run this command: ``` git clone https://github.com/streetturtle/awesome-buttons ```
 4. Figure out why it doesn't work 😳 (jk...but some tinkering may be required to make everything work with your setup)
 
 ### Spotify ###
