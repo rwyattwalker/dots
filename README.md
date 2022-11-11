@@ -116,4 +116,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ## Notes ##
 + The Wibar is hard coded using negative margins for the placement, this is specific to my screen so you will probably need to change the margins in `components/top-bar`
 + If you have issues during the install or if I missed anything in the instructions, feel free to open an issue and let me know, I will do my best to investagte and update instructions accordingly
++ Here is the link to the [background](https://photos.app.goo.gl/ZMyUw5HC1u92RbLs7)
 + If you find these dots useful, please consider leaving a star, it costs nothing and helps me look cool! 😎 
