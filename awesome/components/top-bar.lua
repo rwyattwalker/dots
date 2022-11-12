@@ -65,7 +65,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             fg_empty = "#ebdbb2",
             fg_occupied = "#ebdbb2",
             bg_empty = beautiful.bg_normal,
-            bg_occupied = beautiful.bg_normal,
+            bg_occupied = beautiful.bg_secondary,
             font = "SF Pro Text 30"
         },
     layout   = {
