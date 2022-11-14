@@ -92,6 +92,13 @@ nvim_lsp['html'].setup{
         provideFormatter = true
     }
 }
+nvim_lsp['omnisharp'].setup{
+    cmd = {'OmniSharp.exe', '--stdio'},
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {},
+}
+
 -- css, scss, less, sass
 nvim_lsp['cssls'].setup{
   cmd = {'vscode-css-language-server', '--stdio'},
@@ -115,6 +122,14 @@ nvim_lsp['cssls'].setup{
 -- typescript
 nvim_lsp['tsserver'].setup{
     cmd = {'typescript-language-server', '--stdio'},
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+    }
+}
+--eslint
+nvim_lsp['eslint'].setup{
+    cmd = {'vscode-eslint-language-server', '--stdio'},
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {

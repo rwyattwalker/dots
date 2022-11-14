@@ -165,13 +165,9 @@ return require('packer').startup(function(use)
   use "gruvbox-community/gruvbox"
   use 'kyazdani42/nvim-palenight.lua'
   -- LSP
- use {
-   'neovim/nvim-lspconfig',
-    config = function () require("configs.lspconfig") end,
-  }
-use "williamboman/nvim-lsp-installer"
- require("nvim-lsp-installer").setup({
-    automatic_installation = false, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+use "williamboman/mason.nvim"
+ require("mason").setup({
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
     ui = {
         icons = {
             server_installed = "✓",
@@ -180,6 +176,14 @@ use "williamboman/nvim-lsp-installer"
         }
     }
 })
+ use "williamboman/mason-lspconfig.nvim"
+ require("mason-lspconfig").setup({
+     automatic_installation = true,
+ })
+ use {
+   'neovim/nvim-lspconfig',
+    config = function () require("configs.lspconfig") end,
+  }
   --Git Integration
    use {
   'lewis6991/gitsigns.nvim',
