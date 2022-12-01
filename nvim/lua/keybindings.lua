@@ -21,7 +21,8 @@ map('n', '<leader>ht', '<CMD>Telescope colorscheme<CR>')
 
 --Keybindings for NeoTree
 map('n', '<leader>tt', '<CMD>Neotree<CR>')
-
+--Auto Close brackets
+map('i','{','{<cr>}<C-o>O')
 --Keybindings for Buffer 
 -- Navigate buffers
 map('n', '<leader>ll',"<CMD>bnext<CR>")

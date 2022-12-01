@@ -89,16 +89,30 @@ return require('packer').startup(function(use)
     --   extra_groups = 'all',
       -- exclude = {"Lualine *"}
   })
-  -- Treesitter --
+    -- Treesitter --
   use 'nvim-treesitter/nvim-treesitter'
     require('nvim-treesitter.configs').setup{
+        sync_install = false,
+        ignore_install = { "" },
         highlight = {
            enable = true,
+           disable = { "" },
            additional_vim_regex_highlighting = "false",
            },
-        ensure_installed = {'bash', 'comment', 'css', 'dot', 'gitattributes', 'gitignore', 'graphql', 'hjson', 'html', 'http',
-        'javascript','json', 'json5', 'markdown', 'python', 'regex', 'scss', 'solidity', 'sql', 'tsx', 'typescript', 'vim'},
+        indent = { enable = true },
+        ensure_installed = {'bash', 'comment', 'css', 'dot', 'gitattributes','gitcommit', 'gitignore', 'graphql', 'hjson', 'html', 'http',
+        'javascript','json', 'json5','markdown', 'python', 'regex', 'scss', 'solidity', 'sql', 'tsx', 'typescript', 'vim'},
+    rainbow = {
+        enable = false,
+        disable = { "jsx"},
+        --list of languages you want to disable the plugin for
+        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        -- colors = {}, -- table of hex strings
+        -- termcolors = {} -- table of colour name strings
+  }
     }
+  use 'p00f/nvim-ts-rainbow'
 
   -- Productivity --
   use 'vimwiki/vimwiki'
@@ -198,6 +212,7 @@ use "williamboman/mason.nvim"
   use {
     'hrsh7th/nvim-cmp',
     config = function () require("configs.cmp") end,
+    tag = "v<CurrentMajor>.*",
     requires = {
       {'L3MON4D3/LuaSnip'},        --used in config
       {'onsails/lspkind.nvim'},    --used in config
@@ -211,6 +226,8 @@ use "williamboman/mason.nvim"
     config = function () require("configs.luasnip") end,
     requires = {'rafamadriz/friendly-snippets'},
   }
+    require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+    require('luasnip').filetype_extend("javascript", { "html" })
   --terminal
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   require("toggleterm").setup()
